@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 
 import { Container, Content, Avatar, CloseIcon } from "./styles";
 
-export default function Chip({ text }) {
+export default function Chip({ text, closeable = true }) {
   return (
     <>
       <Container>
@@ -15,9 +15,11 @@ export default function Chip({ text }) {
             />
           </Avatar>
           <span>{text}</span>
-          <CloseIcon>
-            <FaTimes />
-          </CloseIcon>
+          {closeable && (
+            <CloseIcon>
+              <FaTimes />
+            </CloseIcon>
+          )}
         </Content>
       </Container>
     </>
