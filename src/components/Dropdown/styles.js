@@ -18,11 +18,20 @@ export const DropdownButton = styled.button`
   padding: 10px;
   position: relative;
 
+  svg {
+    transform: rotate(0);
+    transition: all 250ms ease-in;
+  }
+
   ${(props) =>
     props.open &&
     css`
       background: ${(props) => props.theme.colors.lightGray};
       color: ${(props) => props.theme.colors.mediumLightGray};
+
+      svg {
+        transform: rotate(-180deg);
+      }
     `}
 `;
 
@@ -33,8 +42,13 @@ export const DropdownContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100px;
+  left: 50%;
+  opacity: 0.25;
   position: absolute;
+  transform: translateX(-50%) rotateX(-90deg);
+  transform-origin: top center;
+  transition: all 100ms ease-in;
+  width: 100px;
   z-index: 1;
 
   ul {
@@ -51,6 +65,9 @@ export const DropdownContent = styled.div`
     props.open &&
     css`
       border-top: 1px solid ${(props) => props.theme.colors.mediumLightGray};
+      opacity: 1;
+      transform: translateX(-50%) rotateX(0);
+      transition-timing-function: ease-out;
     `}
 `;
 
