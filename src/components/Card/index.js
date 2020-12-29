@@ -1,6 +1,13 @@
 import React from "react";
 
-import { Box, Container, Content, CardImage, ActionButton } from "./styles";
+import {
+  Avatar,
+  Box,
+  Container,
+  Content,
+  CardImage,
+  ActionButton
+} from "./styles";
 
 export default function Card({ image }) {
   return (
@@ -13,7 +20,11 @@ export default function Card({ image }) {
         />
         <Content>
           <head>
-            <div className="card-avatar" />
+            <Avatar
+              image={
+                "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light"
+              }
+            />
             <div className="card-title">
               <h5>Tokyo, Japan</h5>
               <span>Vivian's next trip</span>

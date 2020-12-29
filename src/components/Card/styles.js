@@ -46,13 +46,6 @@ export const Content = styled.div`
     position: relative;
     width: 100%;
 
-    div.card-avatar {
-      background: ${(props) => props.theme.colors.saphire};
-      border-radius: 100%;
-      width: 40px;
-      height: 40px;
-    }
-
     div.card-title {
       display: flex;
       flex-direction: column;
@@ -79,6 +72,14 @@ export const Content = styled.div`
     right: 0;
     padding: 15px 10px 5px 15px;
   }
+`;
+
+export const Avatar = styled.div`
+  background: url(${(props) => props.image});
+  background-size: contain;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
 `;
 
 export const ActionButton = styled.button`
