@@ -4,6 +4,7 @@ export const Content = styled.div`
   align-items: center;
   background: ${(props) => props.theme.colors.lightGray};
   border-radius: 50px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: flex;
   height: 30px;
   justify-content: space-between;
