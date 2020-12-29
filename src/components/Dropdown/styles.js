@@ -27,7 +27,7 @@ export const DropdownButton = styled.button`
     props.open &&
     css`
       background: ${(props) => props.theme.colors.lightGray};
-      color: ${(props) => props.theme.colors.mediumLightGray};
+      color: ${(props) => props.theme.colors.mediumDarkGray};
 
       svg {
         transform: rotate(-180deg);
