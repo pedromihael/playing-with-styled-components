@@ -1,14 +1,16 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Content = styled.div`
+export const Container = styled.div`
   align-items: center;
-  background: ${(props) => props.theme.colors.lightGray};
+  background: ${(props) => props.theme.light.colors.lightGray};
   border-radius: 50px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: flex;
   height: 30px;
-  justify-content: space-between;
+  justify-content: ${(props) =>
+    props.closeable ? `space-between` : `flex-start`};
   padding: 5px;
+  position: relative;
   width: 120px;
 
   span {
@@ -17,6 +19,13 @@ export const Content = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    ${(props) =>
+      !props.closeable &&
+      css`
+        left: 40%;
+        position: absolute;
+      `}
   }
 `;
 
@@ -30,9 +39,10 @@ export const Avatar = styled.div`
 
 export const CloseIcon = styled.button`
   align-items: center;
-  background: ${(props) => props.theme.colors.mediumLightGray};
+  background: ${(props) => props.theme.light.colors.mediumLightGray};
   border: none;
   border-radius: 100%;
+  cursor: pointer;
   display: flex;
   height: 15px;
   justify-content: center;
@@ -42,15 +52,7 @@ export const CloseIcon = styled.button`
     height: 60%;
 
     path {
-      fill: ${(props) => props.theme.colors.mediumDarkGray};
+      fill: ${(props) => props.theme.light.colors.mediumDarkGray};
     }
   }
-`;
-
-export const Container = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
 `;
