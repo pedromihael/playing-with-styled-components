@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 
-import { Box, Container } from "./styles";
+import { Box, TooltipBalloon, Container, Children } from "./styles";
 
-export default function Balloon() {
+export default function Balloon({ children, label, direction }) {
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+
+  const handleShowTooltip = useCallback(() => {
+    setTooltipOpen(!tooltipOpen);
+  }, [tooltipOpen]);
+
   return (
-    <Box>
-      <Container direction={"center-top"}>
-        <span>ALowwwwwwwasdasdasdasdasd</span>
-      </Container>
-    </Box>
+    <>
+      <Box>
+        <Children onMouseOver={handleShowTooltip}>{children}</Children>
+        <Container tooltipOpen={tooltipOpen}>
+          <TooltipBalloon direction={direction}>
+            <span>{label}</span>
+          </TooltipBalloon>
+        </Container>
+      </Box>
+    </>
   );
 }
