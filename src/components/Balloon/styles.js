@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+const directions = ["center-bottom", "center-top", "right", "left"];
+
 export const Container = styled.div`
   align-items: center;
   background: ${(props) => props.theme.colors.mediumDarkGray};
@@ -74,6 +76,15 @@ export const Container = styled.div`
             top: -20px;
           }
         `}
+
+        ${(props) =>
+          (!props.direction ||
+            !directions.some((direction) => props.direction === direction)) &&
+          css`
+            &:after {
+              display: none;
+            }
+          `};
 `;
 
 export const Box = styled.div`
