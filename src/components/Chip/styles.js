@@ -33,11 +33,22 @@ export const Avatar = styled.div`
 `;
 
 export const CloseIcon = styled.button`
+  align-items: center;
   background: #848484;
   border: none;
   border-radius: 100%;
+  display: flex;
   height: 15px;
+  justify-content: center;
   width: 15px;
+
+  svg {
+    height: 60%;
+
+    path {
+      fill: #333;
+    }
+  }
 `;
 
 export const Container = styled.div`
