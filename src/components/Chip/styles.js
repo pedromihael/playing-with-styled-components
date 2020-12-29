@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Content = styled.div`
   align-items: center;
-  background: #e5e5e5;
+  background: ${(props) => props.theme.colors.lightGray};
   border-radius: 50px;
   display: flex;
   height: 30px;
@@ -20,7 +20,7 @@ export const Content = styled.div`
 `;
 
 export const Avatar = styled.div`
-  background: #3e6680;
+  background: ${(props) => props.theme.colors.saphire};
   border-radius: 100%;
   height: 25px;
   width: 25px;
@@ -34,7 +34,7 @@ export const Avatar = styled.div`
 
 export const CloseIcon = styled.button`
   align-items: center;
-  background: #848484;
+  background: ${(props) => props.theme.colors.mediumLightGray};
   border: none;
   border-radius: 100%;
   display: flex;
@@ -46,7 +46,7 @@ export const CloseIcon = styled.button`
     height: 60%;
 
     path {
-      fill: #333;
+      fill: ${(props) => props.theme.colors.mediumDarkGray};
     }
   }
 `;
