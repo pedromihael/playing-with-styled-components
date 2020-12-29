@@ -2,7 +2,7 @@ import React from "react";
 
 import { Box, Container, Content, CardImage, ActionButton } from "./styles";
 
-export default function Chip({ image }) {
+export default function Card({ image }) {
   return (
     <Box>
       <Container>
