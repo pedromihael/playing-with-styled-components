@@ -1,21 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.light.colors.white};
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   flex-direction: column;
-  height: 350px;
+  min-height: 350px;
   position: relative;
   width: 260px;
-`;
-
-export const Box = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
 `;
 
 export const CardImage = styled.div`
@@ -28,20 +20,19 @@ export const CardImage = styled.div`
 `;
 
 export const Content = styled.div`
+  align-items: flex-start;
   bottom: 0;
+  display: flex;
+  flex-direction: column;
   height: calc(100% - 156px);
+  padding: 0 15px;
   position: absolute;
   width: 100%;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-
-  padding: 0 15px;
 
   head {
-    display: flex;
     align-items: center;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start !important;
     padding-top: 20px;
     position: relative;
     width: 100%;
@@ -52,7 +43,7 @@ export const Content = styled.div`
       padding-left: 15px;
 
       span {
-        color: ${(props) => props.theme.colors.mediumLightGray};
+        color: ${(props) => props.theme.light.colors.mediumLightGray};
         font-size: 12px;
         padding-top: 2px;
       }
@@ -67,10 +58,10 @@ export const Content = styled.div`
   }
 
   footer {
-    position: absolute;
     bottom: 0;
-    right: 0;
     padding: 15px 10px 5px 15px;
+    position: absolute;
+    right: 0;
   }
 `;
 
@@ -78,19 +69,21 @@ export const Avatar = styled.div`
   background: url(${(props) => props.image});
   background-size: contain;
   border-radius: 100%;
-  width: 40px;
+  cursor: pointer;
   height: 40px;
+  width: 40px;
 `;
 
 export const ActionButton = styled.button`
   background: transparent;
   border: none;
-  color: ${(props) => props.theme.colors.mediumDarkGray};
+  color: ${(props) => props.theme.light.colors.mediumDarkGray};
+  cursor: pointer;
   padding: 5px;
   text-transform: uppercase;
 
   &:hover {
-    background: ${(props) => props.theme.colors.lightGray};
+    background: ${(props) => props.theme.light.colors.lightGray};
     border-radius: 2px;
   }
 `;
